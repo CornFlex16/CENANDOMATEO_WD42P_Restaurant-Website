@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brusc's Smoked Burger</title>
+    <style type="text/css">
+        /*normalizing html by removing their margin and padding*/
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #wrapper-div {
+            width: 100%;
+            min-height: 100px;
+            margin: auto;
+            background: #F1E538;
+            background: linear-gradient(45deg, #F1E538 0%, #CB38AE 50%, #49752B 100%);          
+            border: 2px solid rgb(240, 199, 199);
+        }
+        #logo-nav-div {
+            width: 100%;
+            min-height: 50px;
+            background-color: black;
+        }
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+
+        }
+        #logo-div{
+            width: 40%;
+            min-height: 50px;
+            background-color: rgb(245, 187, 187);
+            float: left;
+            line-height: 50px;
+            padding-left: 2%;
+            margin-bottom: 10px;
+            color: #A7DD3C;
+            background: black;
+            font-size: 30px;
+            text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77,0,38,0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77,25,0,0.5), 9px 0 18px #FFD500, 11px 0 18px #806A00, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #D4FF00, 14px 0 30px #6A8000, 15px 2px 30px rgba(64,77,0,0.5), 15px 0 45px #80FF00, 17px 0 45px #408000, 17px 2px 45px rgba(38,77,0,0.5);
+            color: #A7DD3C;
+        }
+        #nav-div{
+            width: 60%;
+            min-height: 50px;
+            background-color: black(224, 224, 232);
+            float: right;
+            line-height: 50px;
+            padding-right: 2%;
+        }
+        .row {
+            width: 100%;
+            min-height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .cols {
+            width: 20%;
+            min-height: 200px;
+            float: left;
+            text-align: center;
+        }
+        .cols:nth-child(2), .cols:nth-child(3) 
+        {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        #boxes {
+            width: 100%;
+            min-height: 200px;
+            margin-top: 10px;
+        }
+        .clearfix::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        #boxes .box {
+            width: 30%;
+            min-height: 200px;
+            color: aliceblue;
+            background-color: black;
+            border: 2px solid black;
+            text-align: center;
+            float: left;
+        }
+        .box:nth-child(2) {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        div #footer {
+            width: 100%;
+            min-height: 50px;
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77,0,38,0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77,25,0,0.5), 9px 0 18px #FFD500, 11px 0 18px #806A00, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #D4FF00, 14px 0 30px #6A8000, 15px 2px 30px rgba(64,77,0,0.5), 15px 0 45px #80FF00, 17px 0 45px #408000, 17px 2px 45px rgba(38,77,0,0.5), 2px 2px 2px rgba(206,89,55,0);
+color: #103305;
+background: #00000000;
+
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: rgb(3, 0, 0);        
+            font-size: 20px; 
+            line-height: 11px; 
+            padding: 20px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-style: normal; 
+            font-variant: normal; 
+            text-transform: none; 
+            text-shadow: 2px 0 0px #fff715, 3px 2px 0px rgba(43, 241, 56, 0.918), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(237, 244, 35, 0.5), 9px 0 18px #FFD500, 11px 0 18px #806A00, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #D4FF00, 14px 0 30px #6A8000, 15px 2px 30px rgba(64,77,0,0.5), 15px 0 45px #80FF00, 17px 0 45px #408000, 17px 2px 45px rgba(38,77,0,0.5), 2px 2px 2px rgba(206,89,55,0);
+color: #103305;
+background: #f8d1d100;
+            /*background-color: rgb(243, 212, 144); */
+            border: 2px solid rgb(28, 110, 164); 
+            display: inline-block;}
+        li a:hover {
+            background: #900811; }
+        li a:active {
+            background: #75142c; }
+        div .cols img {
+            border-radius: 30%;
+        }
+        p .introP {
+            font-size: 30px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        h1 .head {
+            text-align: center;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper-div">
+        <div id="logo-nav-div" class="clearfix">
+            <div id="logo-div">
+                Brusca's Burgers
+            </div>
+            <div id="nav-div">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                  </ul>
+            </div>
+        </div>
+        <div>
+            <h1 class="head">Smoked Burgers</h1>
+            <p class="introP">" Laughter is Loudest where there are burgers "
+                Happy new year! double come back of our pina sarap pina linamnam beef burgers! 
+                See you soon our burgeries!
+                We are so excited to serve you'll!</p>
+        </div>
+        <div class="row clearfix">
+            <div class="cols"><img src="burger1.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Cheezy Ala King Php 65.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger2.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">MacBee Burger Php 75.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger3.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Magnifico Php 85.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger4.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Hugryarn Php 89.00</label><br><input type="button" value="Buy Now"></div>
+        </div>
+        <div class="row clearfix">
+            <div class="cols"><img src="burger5.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Saporito Php 79.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger6.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">American Hungarian Sausage Php 75.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger7.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Amoroso Php 55.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger8.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Jaw Breaker Php 138.00</label><br><input type="button" value="Buy Now"></div>
+        </div>
+        <div class="row clearfix">
+            <div class="cols"><img src="burger9.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Classico Php 59.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger10.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">OG 2002 Php 221.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger11.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Quarter Pounder Php 75.00</label><br><input type="button" value="Buy Now"></div>
+            <div class="cols"><img src="burger1.jpg" style="width: 100%;height: 200px; alt="burger1"><label for="cheezeB">Spicy Cheese Special Php 69.00</label><br><input type="button" value="Buy Now"></div>
+        </div>
+        <div id="boxes" class="clearfix">
+            <div class="box">
+                <h1 class="footerBoxes">OPENING HOURS</h1>
+                <p class="footerbox1">MONDAY --------9:00 – 22:00 <br>
+                    TUESDAY -------9:00 – 22:00<br>
+                    WEDNESDAY --9:00 – 22:00<br>
+                    THURSDAY -----9:00 – 22:00<br>
+                    FRIDAY -----------9:00 – 00:00<br>
+                    SATURDAY -----9:00 – 00:00<br>
+                    SUNDAY ---------9:00 – 18:00</p>
+            </div>
+            <div class="box">
+                <h1 class="footerBoxes">LOCATIONS</h1>
+                <p class="footerbox2">Location 1: <br>
+                    944 Glenholme Court <br>
+                    Tiffin, OH 44883 <br>
+                </p>
+                <p class="footerbox2">Location 2:<br>
+                    921 Schoolhouse Court <br>
+                    New Bern, NC 28560<br>
+                </p>
+                </div>
+            <div class="box"><h1 class="footerBoxes">CONTACT</h1>
+                <p class="footerbox2">PHONE: 054 / 9923<br>
+                    ON SOCIAL MEDIA: <br>
+                    E-MAIL: orders@pizzanuestra.com<br>
+                </p>
+                
+                
+                
+                
+            </div>
+        </div>
+        <div id="footer">
+            Brusca's Smoked Burger's
+        </div>
+    </div>
+</body>
+</html>
